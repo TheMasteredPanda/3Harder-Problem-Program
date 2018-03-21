@@ -31,12 +31,16 @@ namespace _3Harder_Problem_Program
         public DataManager()
         {
             connection = new SQLiteConnection();
+
+            SQLiteCommand cmd = new SQLiteCommand();
+            cmd.CommandText = "CREATE DATABASE IF NOT EXISTS logs(TEXT problem_id PRIMARY KEY, TEXT date, TEXT name, TEXT priority, TEXT problem_type, TEXT room_id, TEXT description); CREATE DATABASE IF NOT EXISTS users(TEXT username, TEXT password)"; //TODO
         }
 
         public bool save(ProblemBuilder.Problem problem)
         {
+            SQLiteCommand cmd = new SQLiteCommand();
 
-
+            cmd.CommandText = "";
             return true;
         }
     }
